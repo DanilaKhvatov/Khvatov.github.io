@@ -1,1 +1,5 @@
 header {background-color: blueviolet;}
+main {background-color: beige;}
+.Red{background-color: burlywood;}
+.header_wraper{display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;}
+.header_nav{display: flex; flex_wrap: wrap;}
