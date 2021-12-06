@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body {
+        font-family: 'Bona Nova';
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "left middle right" 
+        "footer footer footer"; 
+        grid-template-rows: 60px 1fr 60px;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100vh;  
+    }
+    header {
+        grid-area: header;
+        background-color: #cc00ff;
+        color: #fef3d5; 
+    }
+    footer {
+        grid-area: footer;
+        background-color: #cc00ff;
+        color: #fef3d5; 
+    }
+    .flex-col
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+    .border_div
+    {
+        border: solid 1px #cc00ff;
+        border-radius: 100px;
+        padding: 50px;
+        margin: 20px;
+        box-shadow: 1px 1px 6px 3px #cc00ff;
+    }
+    /* класс можно разделить на .flex-col и .border_div*/ 
+    .middle {
+        grid-area: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: solid 1px #cc00ff;
+        border-radius: 100px;
+        padding: 50px;
+        margin: 20px;
+        box-shadow: 1px 1px 6px 3px #cc00ff
+    }
+    .left {
+        grid-area: left;
+    }
+    .right{
+        grid-area: right;
+    }
+    .form div
+    {
+        padding-bottom: 20px;
+    }
+    .flex-row
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .align center
+    {
+        text-align: center;
+    }
+    .input text
+    {
+        border-radius: 10px;
+        background-color: #fef3d5;
+        border-color: #f28a31;
+        width: 160px;
+        height: 30px;
+    }      
+</style>
+<script>
+    function checkForm(e1) {
+    console.log("Проверка");
+    var name = document.getElementById('name').value;
+    console.log(name);
+    var fail='';
+    var viv=name.value + " " + email.value + " " + tel.value;
+    if (name=="" ||email==""||tel=="")
+       fail="Заполните все поля";
+    else if(name.lenght<=1|| name.lenght>30)
+       fail="Введите корректное имя";
+    else if(email.contains("1"))
+       fail="Введите корректное имя";
+    
+    if (fail !=""){
+       if (fail!="")
+       document.getElementById('eror').innerHTML=fail; 
+    } else {
+        document.getElementById('vivod').innerHTML=viv;
+    }
+    return false;
+    }   
+</script>
+<script>
+    function fanc(){
+        document.getElementById('pasta').checked=true;
+        document.getElementById('tel').checked=true;
+        document.getElementById('nootv').checked=true;
+    }
+</script>
+</head>
+<body>
+    <header>
+        <h1>форма</h1>
+    </header>
+    <main>
+        <div class="midle">
+            <div class="left"></div>
+            
+        </div>
+    </main>    
+</body>
+</html>
