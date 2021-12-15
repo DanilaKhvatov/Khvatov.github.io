@@ -44,7 +44,38 @@
         <option value="light">светлая</option>
         <option value="dark">темная</option>
     </select>
+    <script>
+        function applyTheme(theme){
+            document.body.classList.remove("theme-auto","theme-light","theme-dark");
+            document.body.classList.add('theme-${theme}');
+        }
+        document.addEventListener("DOMContentLoadd",
+        ()=>{document.querySelector("#theme").addEventListener("change",function(){
+            applyTheme(this.value);
+        })
+        document.addEventListener("DOMContentLoaded", () =>{
+            const savedTheme = localStorage.getItem("theme") || "auto";
+            applyTheme(savedTheme);
+            for (const optionElement of document.querySelectorAll("#theme option")){
+                optionElement.selected = savedTheme === optionElement.value;
+            }
+            document.querySelector("#theme").addEventListener("#change", function(){
+                localStorage.setItem("theme", this.value);
+                applyTheme(this.value);
+            })
+        })    
+    </script>
     </div>
+    <section class="maim-form">
+        <textarea name="" id="textArea" cols="30" rows="15"></textarea>
+        <button></button>
+        <script>
+            document.getElementById("textArea").oninput=function text(){
+                localStorage.setItem('savetext', document.getElementById("textArea").value);
+            }
+            document.getElementById("textArea").value = localStorage.getItem('savetext');
+        </script>
+    </section>
         <section class="main-form">
             <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
                 <div class="form-div" id="svaz">
