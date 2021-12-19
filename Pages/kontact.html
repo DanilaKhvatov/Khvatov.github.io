@@ -5,53 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="..//css/style.css"> 
+    <style>
+        .contact{
+            background-color: aliceblue;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    border: 2px solid hsl(212, 54%, 61%);
+    padding-top: 50px;
+    grid-column: span 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 10px;
+        }
+    .pic_seti{display: grid; grid-template-columns: repeat(3,1fr); justify-items: center;}
+    .d_contact{display: grid; grid-template-columns: repeat(3,1fr); justify-content: center; align-items: center;}
+    </style>
 </head>
-<header>
-    <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="example.html"> <img src="../img/00.jpg" alt="Лого" height="100" weight="100">   </a>
-                </li>
-                <li> <a href="../pages/o_sebe.html"> О себе </a> </li>
-                <li> <a href="../pages/resume.html"> Резюме </a></li>
-                <li> <a href="../pages/portfolio.html"> Портфолио </a> </li>
-                <li> <a href="../pages/kompetenzii.html"> Компетенции </a> </li>
-                <li><a href="../pages/kontact.html"> Контакты </a></li>
-            </ul>
-        </nav>
-        
-    </div>
-    <h1> Веб-технологии </h1> 
-</header>
-<article>
-   <h2>
-       Университет "Дубна"
-   </h2>
-   <h3>
-   <p>Есть вопросы?</p>
-</h3>
-<form>
-<p> Как вам удобно будет получить ответ?</p>
-<div> 
-<input type="radio" name="contact" id="contactChoice" value="на почту">  
-<label for="contactChoice">email</label>
-<input type="radio" name="contact" id="contactChoice" value="на телефон"> 
-<label for="contactChoice">на телефон</label>
-<input type="radio" name="contact" id="contactChoice" value="не нужно отвечать">
-<label for="contactChoice">не нужно отвечать</label>
-</div>
-</form>
-</article>
-<footer>
-    <a href="https://vk.com/unidubna_official" > <img src="../img/vk.png" alt="Вконтакте" height="50" width="50"></a>
-    <a href="https://www.instagram.com/unidubna_official/"> <img src="../img/instagram.jpg" alt="Инстаграмм" height="50" width="50"></a>
-    <a href="https://www.youtube.com/c/ТВГУД"> <img src="../img/youtube.png" alt="Ютуб" height="50" width="50"></a>
-    <p>
-        Сайт разработан ФИ, Coppyright 2021
-    </p>
-  </footer>
 <body>
-    
+    <header>
+        <div class="header_wrapper">
+                <div class="header_logo">
+                    <a name=#osebe><a href = "..//index.html#osebe"><img src="..//img/logo.png" alt="Логотип" width="300"></a></a>
+                </div>
+    <nav class="header_nav">
+        <ul class="header_menu">
+            <li class="header_items"><a class="a1" href = "Pages/o_sebe.html">О себе</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/resume.html">Резюме</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/portfolio.html">Портфолио</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/kompetenzii.html">Компетенции</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/kontact.html">Контакты </a></li>
+            <li class="header_items"><a class="a1" href = "Pages/js.html">js</a></li>
+        
+        </ul>
+    </nav>
+    </div>
+    <div class="headers">
+        <h1 class="h1_headers">Веб-технологии</h1>
+    </div>
+    </header>
+    <main>
+        <div>
+        <section>
+            <div class="d_contact">
+                <div class="contact">
+                    <h3> Социальные сети: </h3>
+                    <div class="pic_seti">
+                        <a href="https://vk.com/unidubna_official" > <img src="../img/vk.png" alt="Вконтакте" height="30" width="30"></a>
+                        <a href="https://www.instagram.com/unidubna_official/"> <img src="../img/instagram.jpg" alt="Инстаграмм" height="30" width="30"></a>
+                        <a href="https://www.youtube.com/c/ТВГУД"> <img src="../img/youtube.png" alt="Ютуб" height="30" width="30"></a>
+                    </div>
+                </div>
+
+        <div class="contact">
+            <h3>  Электронная почта: </h3>
+            <div> khds.20@uni-dubna.ru</div>
+        </div>
+
+        <div class="contact">
+            <h3>  Телефон: </h3>
+            <div> 89162288245</div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://vk.com/unidubna_official" > <img src="../img/vk.png" alt="Вконтакте" height="50" width="50"></a>
+        <a href="https://www.instagram.com/unidubna_official/"> <img src="../img/instagram.jpg" alt="Инстаграмм" height="50" width="50"></a>
+        <a href="https://www.youtube.com/c/ТВГУД"> <img src="../img/youtube.png" alt="Ютуб" height="50" width="50"></a>
+        <p>
+            Сайт разработан Хватовым Д.С, Coppyright 2021
+        </p>
+     </footer>
 </body>
 </html>

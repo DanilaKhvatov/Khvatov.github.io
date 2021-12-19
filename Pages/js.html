@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="..//css/style.css"> 
+    <script>
+        function fanc(){
+            document.getElementById('posta').checked=true;
+            document.getElementById('tel').checked=true;
+            document.getElementById('nootv').checked=true;
+        }
+    </script>
+    <style>
+        .js_div{display: grid; grid-template-columns: repeat(2, 1fr); justify-content: center; align-items: center;}
+        .main-form{display:flex; flex-wrap: wrap; text-align: center; width: 400px; height: 300px; border: 2px solid #6698d1; grid-column: span 1; margin-top: 10px; margin-bottom: 10px; padding: 20px; align-items: center;}
+        .container{width: 400px;}
+        .container1{width: 300px;}
+        .slaider{width: 300px; height: 200px; overflow: hidden}
+        .slaider-line{width: 1200px; height: 200px; display: flex; position: relative; left: 0;}
+        .mini{width: 300px}
+        .textarea1{resize: none; width: 350px; height: 200px;}
+    </style>
+</head>
+<body class="body1">
+    <header>
+        <div class="header_wrapper">
+                <div class="header_logo">
+                    <a name=#osebe><a href = "..//index.html#osebe"><img src="..//img/logo.png" alt="Логотип" width="300"></a></a>
+                </div>
+    <nav class="header_nav">
+        <ul class="header_menu">  
+        <li class="header_items"><a class="a1" href = "Pages/o_sebe.html">О себе</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/resume.html">Резюме</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/portfolio.html">Портфолио</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/kompetenzii.html">Компетенции</a></li>
+            <li class="header_items"><a class="a1" href = "Pages/kontact.html">Контакты </a></li>
+            <li class="header_items"><a class="a1" href = "Pages/js.html">js</a></li>
+        </ul>
+    </nav>
+    </div>
+    <div class="headers">
+        <div class="h1_headers"><h1>Веб-технологии</h1></div>
+    </div>
+    </header>
+    <main>
+        <div>Выберете тему:</div>
+                <select name="" id="theme">
+                <option value="auto">по умолчанию</option>
+                <option value="light">светлая</option>
+                <option value="dark">тёмная</option>
+                </select>
+                <script>
+                function applyTheme(theme){
+                document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
+                document.body.classList.add(`theme-${theme}`);
+                }
+                document.addEventListener("DOMContentLoaded", ()=>{
+                document.querySelector("#theme").addEventListener("change", function(){
+                applyTheme(this.value);
+                });});
+                document.addEventListener("DOMContentLoaded", () => {
+                    const savedTheme = localStorage.getItem("theme") || "auto";
+                    applyTheme(savedTheme);
+                    for (const optionElement of document.querySelectorAll("#theme option")){
+                        optionElement.selected = savedTheme === optionElement.value;
+                    }
+                    document.querySelector("#theme").addEventListener("change", function(){
+                    localStorage.setItem("theme", this.value);
+                    applyTheme (this.value);})
+                })
+                </script>
+                </div>
+    </select>
+    </div>
+    <div class="js_div">
+        <section class="main-form">
+            <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
+                <div class="form-div" id="svaz">
+                    <div>как вам удобно получить ответ:</div>
+                <label for=""><input type="radio" id="posta" value="по почте">по почте</label><br>
+                <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
+                <label for=""><input type="radio" id="nootv" value="не отвечать">не отвечать</label>
+            </div>
+            <div class="form-div">
+                <label for="theme">укажите тему вопроса</label>
+                <select name="theme" id="theme" class="input-text">
+                <option value="">работа</option>
+                <option value="">сотрудничество</option>
+                <option value="">личное</option>
+                </select>
+            </div>
+            <div class="form-div">
+            <div>И еще один вопрос</div>
+            <label for="checkbox1"><input type="checkbox" name="" id="checkbox1">так</label>
+            <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">или так</label>
+            <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">а может быть вот так</label>
+            </div>
+    
+            <div class="form-div">
+                <label for="name" class="flex-row">ваше имя</label>
+                <input type="text" name="name" id="name" class="input-text">
+            </div>
+    
+            <div class="form-div" id="email1">
+                <label for="email" class="flex-row">ваша почта</label>
+                <input type="email" name="email" id="email" class="input-text">
+            </div>
+    
+            <div class="form-div" id="tel1">
+                <label for="tel" class="flex-row">ваш телефон</label>
+                <input type="tel" name="tel" id="tel" class="input-text">
+            </div>
+    
+            <div class="form-div">
+                <div>задайте вопрос</div>
+                <div>
+                    <textarea cols="30"></textarea>
+                </div>
+            </div>
+            <div class="align-center">
+                <input type="submit" value="отправить запрос" class="input-text">
+            </div>
+        </form>
+        <script>
+         document.getElementById('svaz').addEventListener("click", hiddenClose1);
+         function hiddenClose1(){
+            let x=document.getElementById('tel1');
+            let y=document.getElementById('email1');
+         
+            if (document.getElementById('posta').checked){
+            y.style.visibility='visible';
+            }
+                else{
+                    y.style.visibility='hidden';
+            }
+            if (document.getElementById('tel').checked){
+            x.style.visibility='visible';
+            }
+                else{
+                    x.style.visibility='hidden';
+            }}
+        </script>
+
+        </section>
+        <section class="main-form">
+            <div class="noselect">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus explicabo consequatur iste delectus minima, illum quod reprehenderit rerum est numquam. Temporibus illo tenetur cumque at dolorem consequatur quos, quam ullam?
+            </div>
+            <div>
+                <img src="..//img/4.jpg" alt="1" width="200">
+            </div>
+        </section>
+        <section class="main-form">
+            
+
+
+            
+        </section>
+
+        <section class="main-form">
+            <textarea class="textarea1" name="" id="textArea" cols="30" rows="10"></textarea><br>
+            <button>Button
+            <script>
+                document.getElementById("textArea").oninput=function text(){
+                    localStorage.setItem('savetext', document.getElementById("textArea").value);
+                    console.log(localStorage.getItem('savetext'));
+                }
+                document.getElementById("textArea").value = localStorage.getItem('savetext');
+            </script>
+            </button>
+        </section>
+
+        <section class="main-form">
+            <div class="container">
+                <div id="big">
+                    <img src="..//img/2.jpg" width='300' alt="" id="bigp" class="bigp">
+                </div>
+                <div id="small">
+                    <img src="..//img/инвенарь.jpg" width='100' alt="" class="smallp">
+                    <img src="..//img/5.jpg" width='100' alt="" class="smallp">
+                    <img src="..//img/склоны.jpg" width='100' alt="" class="smallp">
+                </div>
+                <script>
+                    let el=document.getElementsByClassName("smallp");
+                    console.log(el);
+                    for(i=0;i<el.length;i++){
+                        el[i].onclick=pic;
+                    }
+                    function pic(event){
+                        x=document.getElementById("bigp");
+                        console.log(event.target);
+                        x.src=event.target.src;
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section class="main-form">
+            <div class="container1">
+                <div class="slaider">
+                    <div class="slaider-line">
+                        <img src="../img/2.jpg" alt="" class="mini">
+                        <img src="..//img/инвенарь.jpg" alt="" class="mini">
+                        <img src="..//img/5.jpg" alt="" class="mini">
+                        <img src="..//img/склоны.jpg" alt="" class="mini">
+                    </div>
+                </div>
+                <button class="slaider-prev">Назад</button>
+                <button class="slaider-next">Вперед</button>
+                <script>
+                    let offset=0;
+                    const slaiderline=document.querySelector('.slaider-line');
+                    document.querySelector('.slaider-next').addEventListener('click', function(){
+                        offset=offset+300;
+                        if(offset>900){
+                            offset=0;
+                        }
+                        slaiderline.style.left=-offset+"px";
+                })
+                   document.querySelector('.slaider-prev').addEventListener('click', function(){
+                        offset=offset-300;
+                        if(offset<0){
+                            offset=900;
+                        }
+                        slaiderline.style.left=-offset+"px";
+                })
+                </script>
+            </div>
+        </section>
+    </div>
+    </main>
+        <footer>
+            <a href="https://vk.com/unidubna_official" > <img src="../img/vk.png" alt="Вконтакте" height="50" width="50"></a>
+            <a href="https://www.instagram.com/unidubna_official/"> <img src="../img/instagram.jpg" alt="Инстаграмм" height="50" width="50"></a>
+            <a href="https://www.youtube.com/c/ТВГУД"> <img src="../img/youtube.png" alt="Ютуб" height="50" width="50"></a>
+            <p>
+                Сайт разработан Хватовым Д.С, Coppyright 2021
+            </p>
+        </footer>
+    </body>
